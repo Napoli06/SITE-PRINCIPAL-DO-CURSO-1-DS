@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCN_GMCP</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            color: blueviolet;
+            text-shadow: 1px 1px 30px turquoise;
+        }
+        #trianguloInputs {
+            margin: 10px 40px;
+            margin-top: 50px;
+        }
+        #Adicionar {
+            background-color: blueviolet;
+            color: white;
+            box-shadow: 1px 1px 10px turquoise;
+            margin: 40px;
+            margin-top: 20px;
+        }
+        #verificar {
+            background-color: turquoise;
+            color: white;
+            box-shadow: 1px 1px 10px blueviolet;
+            margin: 40px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Verificador de Triângulos</h1>
+    <form id="trianguloForm">
+        <div id="trianguloInputs">
+            <h3>Triangulo 1:</h3>
+            Lado A: <input type="number" name="ladoA1" required><br>
+            Lado B: <input type="number" name="ladoB1" required><br>
+            Lado C: <input type="number" name="ladoC1" required><br>
+        </div>
+        <button id="Adicionar" type="button" onclick="addTriangulo()">Adicionar outro triângulo</button>
+        <button id="verificar" type="submit">Verificar Triângulos</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        let trianguloCount = 1;
+
+        function addTriangulo() {
+            trianguloCount++;
+            if (trianguloCount <= 5) {
+                const trianguloInputs = document.getElementById('trianguloInputs');
+                const newTriangulo = document.createElement('div');
+                newTriangulo.innerHTML = `
+                    <h3>Triangulo ${trianguloCount}:</h3>
+                    Lado A: <input type="number" name="ladoA${trianguloCount}" required><br> 
+                    Lado B: <input type="number" name="ladoB${trianguloCount}" required><br>
+                    Lado C: <input type="number" name="ladoC${trianguloCount}" required><br>
+                `;
+                trianguloInputs.appendChild(newTriangulo);
+            }
+        }
+
+        document.getElementById('trianguloForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+
+            for (let i = 1; i <= trianguloCount; i++) {
+                const ladoA = parseFloat(document.querySelector(`input[name="ladoA${i}"]`).value);
+                const ladoB = parseFloat(document.querySelector(`input[name="ladoB${i}"]`).value);
+                const ladoC = parseFloat(document.querySelector(`input[name="ladoC${i}"]`).value);
+
+                let result = `Triângulo ${i}: `;
+
+                if (isTriangulo(ladoA, ladoB, ladoC)) {
+                    result += tipoTriangulo(ladoA, ladoB, ladoC);
+                } else {
+                    result += 'Não a um triângulo válido.';
+                }
+
+                const p = document.createElement('p');
+                p.textContent = result;
+                resultDiv.appendChild(p);
+            }
+        });
+
+        function isTriangulo(a, b, c) {
+            return (a + b > c) && (a + c > b) && (b + c > a);
+        }
+
+        function tipoTriangulo(a, b, c) {
+            if (a === b && b === c) {
+                return 'Equilátero';
+            } else if (a === b || a === c || b === c) {
+                return 'Isósceles';
+            } else {
+                return 'Escaleno';
+            }
+        }
+    </script>
+</body>
+</html>

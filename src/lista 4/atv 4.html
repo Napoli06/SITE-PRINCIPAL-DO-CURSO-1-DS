@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCN_GMCP</title>
+    <style>
+        body  {
+            background-color: black;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            color: blueviolet;
+            text-shadow: 1px 1px 30px turquoise;
+        }
+        label {
+            margin: 10px 10px;
+            padding: 10px;
+        }
+        #Adicionar {
+            background-color: blueviolet;
+            color: white;
+            box-shadow: 1px 1px 10px turquoise;
+            margin: 40px;
+            margin-top: 20px;
+        }
+        #Calcular {
+            background-color: turquoise;
+            color: white;
+            box-shadow: 1px 1px 10px blueviolet;
+            margin: 40px;
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Calculadora do Aumento dos Salários</h1>
+    <label for="NumFun">São quantos funcionários?</label>
+    <input type="text" name="NumFun" id="NumFun" min="0">
+    <button id='Adicionar' onclick="adicionar()">Adicionar funcionário</button>
+    <button id="Calcular" onclick="Calcular()">Calcular Valor do Salário</button>
+
+    <div id="mostrar">
+    </div>
+
+    <script>
+        function adicionar() {
+            var Fun = parseInt(document.getElementById('NumFun').value);
+            if (!isNaN(Fun) && Fun > 0) {
+                for (var i = 0; i < Fun; i++) {
+                    const input = document.createElement('input');
+                    const br = document.createElement('br');
+                    const label = document.createElement('label');
+                    
+                    label.textContent = 'Digite o Salário:';
+                    
+                    input.setAttribute('type', 'number');
+                    input.setAttribute('class', 'Salar');
+
+                    document.getElementById('mostrar').appendChild(label);
+                    document.getElementById('mostrar').appendChild(input);
+                    document.getElementById('mostrar').appendChild(br);
+                }
+            } else {
+                alert("Por favor, insira um número válido.");
+            }
+        }
+
+        function Calcular() {
+            var salarios = document.getElementsByClassName('Salar');
+            var resultado = document.createElement('div');
+            
+            for (var i = 0; i < salarios.length; i++) {
+                var salario = parseFloat(salarios[i].value);
+                if (isNaN(salario)) {
+                    continue;
+                }
+                var aumento;
+                if (salario < 2500) {
+                    aumento = salario * 1.10;
+                } else {
+                    aumento = salario * 1.08;
+                }
+                var result = document.createElement('p');
+                result.textContent = `Novo Salário: R$${aumento.toFixed(2)}`;
+                resultado.appendChild(result);
+            }
+            var mostrar = document.getElementById('mostrar');
+            mostrar.appendChild(resultado);
+        }
+    </script>
+</body>
+</html>

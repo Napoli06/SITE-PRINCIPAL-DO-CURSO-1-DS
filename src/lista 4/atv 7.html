@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCN_GMCP</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            color: blueviolet;
+            text-shadow: 1px 1px 50px turquoise;
+        }
+        label {
+            margin: 10px 30px;
+            margin-top: 50px;
+        }
+        #NumAlunos {
+            margin-top: 50px;
+            padding: 5px;
+        }
+        #Adicionar {
+            background-color: blueviolet;
+            box-shadow: 1px 1px 20px turquoise;
+            color: white;
+            padding: 10px;
+            margin: 20px 50px;
+        }
+        #Ver {
+            background-color: turquoise;
+            box-shadow: 1px 1px 20px blueviolet;
+            color: white;
+            padding: 10px;
+            margin: 10px 10px;
+            animation: brilha 10s linear infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Menções</h1>
+
+    <label for="NumAlunos">Quantidade de Alunos: </label>
+    <input type="number" id="NumAlunos" name="NumAlunos" min="0">
+    <button id='Adicionar' onclick="adicionar()">Adicionar Aluno(s) </button>
+    <button id="Ver" onclick="Ver_Menção()">Ver Menção</button>
+  
+    <div id="mostrar">
+
+    </div>
+
+    <script>
+
+         function adicionar() {
+            var alu = parseInt(document.getElementById('NumAlunos').value);
+            if (!isNaN(alu) && alu > 0) {
+                const mostrarDiv = document.getElementById('mostrar');
+                mostrarDiv.innerHTML = ''; // Limpa o conteúdo anterior
+                for (var i = 0; i < alu; i++) {
+                    const label = document.createElement('label');
+                    label.textContent = 'Selecione a Menção:';
+                    const select = document.createElement('select');
+                    const options = ['selecione...', 'NA', 'I', 'B', 'MB'];
+
+                    options.forEach(optionText => {
+                        const option = document.createElement('option');
+                        option.text = optionText;
+                        select.add(option);
+                    });
+
+                    mostrarDiv.appendChild(label);
+                    mostrarDiv.appendChild(select);
+                    mostrarDiv.appendChild(document.createElement('br'));
+                }
+            }
+        }
+    
+    function Ver_Menção() {
+        const mostrarDiv = document.getElementById('mostrar');
+            const selects = mostrarDiv.getElementsByTagName('select');
+            const resultados = [];
+
+            for (let i = 0; i < selects.length; i++) {
+                const select = selects[i];
+                const indice = i + 1;
+                const mencao = select.value;
+
+                if (mencao === 'Selecione...') {
+                    alert('Por favor, selecione uma menção para todos os alunos.');
+                    return;
+                }
+
+                resultados.push(`Aluno ${indice}: ${mencao}`);
+            }
+
+            mostrarDiv.innerHTML += 'Menção dos Alunos: <br>' + resultados.join ('<br>');
+        }
+    </script>
+</body>
+</html>

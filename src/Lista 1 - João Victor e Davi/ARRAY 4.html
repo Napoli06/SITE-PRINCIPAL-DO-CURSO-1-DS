@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+        4.	Receba 5 palavras em um vetor e exiba a quantidade de caracteres do maior elemento.
+    -->
+
+    <h1>
+        João Victor e Davi
+    </h1>
+    <script>
+        const palavras=[]
+
+        for (let i = 0; i < 5; i++) {
+            const caracteres = prompt("Digite um nome")
+            palavras.push(caracteres) 
+        }
+
+        const maior = palavras.reduce((maiorAtual, palavra) => {
+        return palavra.length > maiorAtual.length ? palavra : maiorAtual;
+    }, '');
+    document.write(`A maior quantidade de caracteres dentre os nomes fornecidos é: ${maior.length} </div>`)
+    </script>
+</body>
+</html>

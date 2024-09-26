@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCN_GMCP</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            color: blueviolet;
+            text-shadow: 1px 1px 30px turquoise;
+        }
+        #tudo {
+            margin: 50px 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1> Números Primos até 100</h1>
+    <div id="tudo">
+    <script>
+        var n = 2;
+document.write(1 + (' , '));
+while (n <= 100) {
+    var primo = true;
+    var i = 2;
+    while (i <= Math.sqrt(n)) {
+        if (n % i === 0) {
+            primo = false;
+            break;
+        }
+        i++;
+    }
+    if (primo) {
+        document.write(n + (' , '));
+    }
+    n++;
+}
+    </script>
+    </div>
+</body>
+</html>

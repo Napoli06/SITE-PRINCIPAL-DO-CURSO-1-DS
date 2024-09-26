@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Aluno</title>
+    <link rel="stylesheet" href="src/js/css/style FORM.css">
+    <script src="index.js"></script>
+
+</head>
+<body>
+
+    <h1>FORMULÁRIO DE ALUNO</h1>
+
+    <div class="form">
+
+<form>
+    <fieldset class="field">
+        <div class="top-titlle">
+        Complete com seus dados gerais: <br>
+        </div>
+        <br>
+
+
+
+    <label for="name">Digite seu nome:</label> 
+    <input type="text" id="name" placeholder="Ex:João"> <br>
+
+    <label for="idade">Selecione sua idade:</label>
+    <input type="number" id="idade" placeholder="Ex:18 anos"> <br>
+
+    <label for="senha">Digite sua senha:</label>
+    <input type="password" id="senha" placeholder="Ex:1234"> <br>
+
+    <label for="color">Escolha sua cor favorita:</label>
+    <input type="color" id="color"> <br>
+
+    <label for="email">Digite seu email:</label>
+    <input type="email" id="email" placeholder="Ex:eu@gmail.com"> <br>
+
+    <label for="contato">Insira seu número de telefone:</label>
+    <input type="tel" id="contato" placeholder="Ex:(12)3456-7890"> <br>
+
+            <div class="estadocivil">
+                
+                <label for="estado">Estado civil</label>
+                <select name="estado-civil" id="estado-civil">
+                    <option>Casado (a)</option>
+                    <option>Solteiro (a)</option>
+                    <option>Viúvo (a)</option>
+                    <option>Divorciado (a)</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+
+    <div class="low-tittle">
+        Escolha um horário de estudo:
+    </div>
+
+    <label for="Integral">Integral</label>
+    <input type="radio" id="periodo" name="periodo"><br>
+
+    <label for="Noite">Noite</label>
+    <input type="radio" id="periodo" name="periodo"><br>
+
+    <label for="reseta">Resetar formulário</label>
+    <input type="reset" id="reseta"> <br>
+    
+    <input type="submit">
+    </div>
+    
+    </fieldset>
+
+</form>
+</body>
+</html>

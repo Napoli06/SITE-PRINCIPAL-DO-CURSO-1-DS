@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCN_GMCP</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 50px 50px;
+            padding: 20px 20px;
+        }
+        h1 {
+            text-align: center;
+            color: blueviolet;
+            text-shadow: 1px 1px 30px turquoise; 
+        }
+        #tudo {
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Números Ímpares do 1 até 250</h1>
+    <div id="tudo">
+    <script>
+        var a = 1;
+
+        while (a <= 250) {
+            if (a % 2 !== 0){
+            document.write(a + " , ");
+            }
+            a++;
+        }
+    </script>
+    </div>
+</body>
+</html>

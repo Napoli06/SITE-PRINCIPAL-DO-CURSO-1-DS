@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi e João Victor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+    Crie um array 3x3 com valores recebidos via prompt e ao final exiba os valores digitados e o maior valor entre eles.
+    -->
+    <h1 class="tittle">
+        Davi e João Victor
+      </h1>
+      <script>
+        let matriz = [];
+        for (let i = 0; i < 3; i++) {
+           matriz[i] = [];
+           for (let k = 0; k < 3; k++) {
+               const valor = prompt(`Digite um valor para a posição [${i}][${k}]`)
+               matriz [i][k] = Number(valor);
+           }
+
+           const TodosValores = [].concat(...matriz);
+            
+           let MaiorValor = Math.max(...TodosValores);
+
+           document.write(`<div class="resultado">Os valores digitados foram [${matriz}] e o maior número digitado foi [${MaiorValor}].</div>`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+        5.	Crie 3 vetores com elementos diferentes e concatene-os. Exiba na página o resultado.
+    -->
+
+    <h1>
+        João Victor e Davi
+    </h1>
+    <div id="resultado" class="centralizado"></div>
+
+    <script>
+        const vetor1 = [];
+        const vetor2 = [];
+        const vetor3 = [];
+
+        for (let a = 0; a < 3; a++) {
+            const num = prompt("Digite um número");
+            vetor1.push(num);
+        }
+
+        for (let e = 0; e < 3; e++) {
+            const nom = prompt("Digite um nome");
+            vetor2.push(nom);
+        }
+
+        for (let i = 0; i < 3; i++) {
+            const col = prompt("Digite uma cor");
+            vetor3.push(col);
+        }
+
+        const todas = vetor1.concat(vetor2, vetor3);
+
+        document.getElementById('resultado').innerText = todas.join(", ");
+    </script>
+</body>
+</html>

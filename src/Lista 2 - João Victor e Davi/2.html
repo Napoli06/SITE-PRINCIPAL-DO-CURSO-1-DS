@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi e João Victor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+    Crie um array bidimensional 3x3 onde os valores deverão ser inseridos via input
+    e coletados via querySelector. Receba um valor multiplicador e crie uma função que
+    retorne um novo array onde cada elemento do array original é multiplicado pelo valor indicado.
+    -->
+    <h1 class="tittle">
+        Davi e João Victor
+      </h1>
+    
+    <script>
+
+      let array3x3 = [];
+
+      for (let i = 0; i < 3; i++) {
+          array3x3[i] = []; // Inicializa a linha correta
+          for (let j = 0; j < 3; j++) {
+              const valor = prompt(`Insira o valor para a posição [${i}][${j}]`);
+              array3x3[i][j] = Number(valor); // Converte o valor para número
+          }  
+      }
+
+      const multiplicador = Number(prompt("Insira um valor para multiplicar os números do array")); // Corrigido o erro de digitação
+
+      function multiplicarArray(array, fator) {
+          return array.map(row => row.map(element => element * fator));
+      }
+
+      const novoArray = multiplicarArray(array3x3, multiplicador);
+
+        document.write(`<div class="resultado">Novo Array multiplicado:, ${novoArray}.</div>`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+       3.	Receba 5 números e exiba-os em ordem decrescente.
+    -->
+
+    <h1>
+        João Victor e Davi
+    </h1>
+    
+    
+    <script>
+        const numbers = [];
+
+            for (let i = 0; i < 5; i++) {
+                const num = prompt("Digite 5 números")
+                numbers.push(num)
+            }
+            numbers.sort((a,b)=> b-a);
+
+            const decrescente = numbers.join(", ")
+            document.write(`Números em ordem decrescente: ${decrescente} </div>`)
+    </script>
+        
+</body>
+</html>

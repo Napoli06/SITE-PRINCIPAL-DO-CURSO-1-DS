@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi e João Victor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--
+  Crie um array bidimensional de 3 índices com 3 itens cada. Receba os valores de cada índice via prompt e no final exiba a tabela de valores digitada e a soma de todos os números.
+*Utilizar forEach para percorrer a matriz e reduce para acumular os valores.
+  -->
+    
+      <h1 class="tittle">
+        Davi e João Victor
+      </h1>
+
+    <script>
+
+let array2D = new Array(3).fill(0).map(() => new Array(3).fill(0));
+
+
+array2D.forEach((row, rowIndex) => {
+  row.forEach((_, colIndex) => {
+    array2D[rowIndex][colIndex] = parseInt(prompt(`Digite o valor para a linha ${rowIndex + 1}, coluna ${colIndex + 1}: `));
+  });
+});
+
+
+console.log("Tabela de valores:");
+array2D.forEach((row, rowIndex) => {
+  console.log(`Linha ${rowIndex + 1}: ${row.join(", ")}`);
+});
+
+const soma = array2D.reduce((acc, row) => acc + row.reduce((acc, value) => acc + value, 0), 0);
+
+document.write(`<div class="resultado">A soma de todos os números é: ${soma}.</div>`);
+    </script>
+    </style>
+</body>
+</html>

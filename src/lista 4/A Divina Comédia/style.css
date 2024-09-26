@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo {
+    max-width: 150px;
+    text-align: left;
+    margin: 3px;
+}
+.menu-principal {
+    display: block;
+    background-color: rgb(2, 2, 2);
+    overflow: hidden;
+    border: 1px solid black;
+}
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(23, 23, 23);
+}
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.insta {
+    max-width: 25px;
+    max-height: 25px;
+    margin: 3px;
+    float: right;
+    cursor: pointer;
+}
+#imagemdivina{
+    height: 300px;
+    max-width: 700px;
+}
+
+.fundo-menu {
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    background-color: rgb(2, 2, 2);
+    size: auto;
+}
+.menu-links {
+    text-align: center;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}
+.menu-links a{
+    text-decoration: none;
+    font-size: 30;
+    color: rgb(151, 45, 3);
+}
+.menu-links a:hover{
+   color: white;
+   transition: 0.3s;
+}
+
+.menu-topicos {
+    background-color: rgb(9, 9, 9);
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+}
+.quebra-linha {
+    background-color: black;
+    height: 5px;
+}
+.criadores-site {
+    background-color: rgb(30, 30, 30);
+    text-align: center;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+.texto-titulo {
+    color: rgb(255, 255, 255);
+    text-shadow: 10%;
+}
+.foto-autor {
+    max-width: 150px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.tabela {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+td {
+    text-align: center;
+}
+.nome-autor {
+    color: aliceblue;
+    max-width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.copyright {
+    text-align: center;
+    color: rgb(249, 255, 255);
+    font-size: medium;
+}
+.nome-autor1 {
+    color: rgb(169, 169, 169);
+}
+.livro {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.retrato-dante {
+    max-width: 200px;
+    border: 1px solid black;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#quebra {
+    width: 95%;
+    height: 4px;
+    background-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+}

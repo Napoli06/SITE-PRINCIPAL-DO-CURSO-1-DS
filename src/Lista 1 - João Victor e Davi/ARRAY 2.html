@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+        2.	Receba 4 palavras em um vetor e exiba em ordem alfabética.
+    -->
+
+    <h1>
+        João Victor e Davi
+    </h1>
+    <script>
+       const palavras = [];
+       
+       for (let i = 0; i < 4; i++) {
+           const plv = prompt("Digite uma palavra:")
+           palavras.push(plv)
+       }
+       palavras.sort();
+       
+       const ordemalfabetica = palavras.join(", ")
+
+       document.write(`Palavras em ordem alfabetica: ${ordemalfabetica} </div>`)
+   </script>
+</body>
+</html>

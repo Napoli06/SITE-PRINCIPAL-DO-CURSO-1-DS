@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+        6.	Receba 3 números em um vetor, se a soma exceder 100, deve-se exibir o maior valor, do contrário exibe-se o menor valor.
+    -->
+
+        <h1>
+            João Victor e Davi
+        </h1>
+        <script>
+
+            const vetor1 = []
+
+                for(let n = 0; n < 3; n++) {
+                    const number=parseFloat(prompt("Digite um número"))
+                    vetor1.push(number)
+                }
+
+                let soma = 0
+
+                for (let s = 0; s < vetor1.length; s++) {
+                    soma+=vetor1[s] 
+                }
+                if (soma > 100 ) {
+                    const maiorValor = Math.max(...vetor1)
+                document.write(`A soma é ${soma}. O maior valor é ${maiorValor}`)
+                }
+                else {
+                    const menorValor = Math.min(...vetor1)
+                    document.write(`A soma é ${soma}. O menor valor é ${menorValor} </div>`)
+                }
+        </script>
+</body>
+</html>
