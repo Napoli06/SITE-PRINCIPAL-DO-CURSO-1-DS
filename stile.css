@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+main {
+  padding: 20px;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  height: 170vh;
+  border-radius: 0 18px 18px 0;
+}
+
+#sidebar_content {
+  padding: 12px;
+}
+
+#user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+#melmel {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 20%;
+}
+
+#user_inf {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+#user_inf span:last-child {
+  color: #e9e9e9;
+  font-size: 12px;
+  color: black;
+}
+
+#side_itens {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.side-item {
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.side-item:hover:not(.active),
+#logout_btn:hover {
+  background-color: #e9e9e9;
+}
+
+.side-item a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: black;
+}
+
+.side-item a i {
+  width: 20px;
+  height: 20px;
+}
+
+#logout {
+  border-top: 1px solid #e3e9f7;
+  padding: 12px;
+}
+
+#logout_btn {
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+#open_btn {
+  background-color: transparent;
+  color: black;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.item-description {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  color: black;
+  font-family: inherit;
+}
+
+#sidebar.open {
+  min-width: 15%;
+}
+
+#sidebar.open-sidebar .item-description {
+  width: 150px;
+}
+
+.B {
+  text-align: center;
+  color: white;
+  font-family: inherit;
+}
+
+.header_home,
+.header_TPA,
+.header_port,
+.header_lic,
+.header_Ingles,
+.header_APS,
+.header_FI,
+.text_header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: x-large;
+  color: white;
+  font-family: inherit;
+  top: 0;
+}
+
+.all_home p,
+.Alunos,
+.TPA,
+.all_TPA,
+.all_lic,
+.all_Ingles,
+.all_APS,
+.all_FI,
+#cont_mat,
+.text_cont {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: large;
+  color: white;
+  font-family: inherit;
+  top: 8rem;
+  ;
+  
+}
+
+.licoes {
+  width: 70vw;
+  height: 100vh;
+  background-image: url(/img/livro-pt.webp);
+  z-index: 2;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: inherit;
+}
+
+.atvs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  flex-direction: row;
+  width: 35vw;
+  height: 40vh;
+  border: 2px solid transparent;
+  margin: auto;
+  margin-top: 300px;
+}
+
+#atv1,
+.dante {
+  border: 3px solid rgb(126, 126, 255);
+  color: black;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5%;
+  transition: all 300ms ease-in-out;
+}
+
+#atv1 {
+  width: 10vw;
+  height: 7vh;
+}
+
+#atv1:hover {
+  transform: scale(1.05);
+}
+
+.dante {
+  width: 15vw;
+  height: 15vh;
+  background-color: rgb(216, 243, 252);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 200px;
+  font-size: x-large;
+}
+
+.dante:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+.texto_port {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 60px;
+  font-size: large;
+  color: white;
+  font-family: inherit;
+}
+
+#mat {
+  color: white;
+  font-family: inherit;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  font-size: x-large;
+  position: absolute;
+}
+
+.text_header,
+.text_cont {
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: large;
+}
+
+
+@media (max-width: 450px) {
+  .header_home,
+  .header_TPA,
+  .header_port,
+  .header_lic,
+  .header_Ingles,
+  .header_APS,
+  .header_FI,
+  .text_header {
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+  
+  .TPA,
+  .all_TPA,
+  .all_lic,
+  .all_Ingles,
+  .all_APS,
+  .all_FI,
+  #cont_mat,
+  .text_cont {
+    top: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+}
+
+.all_home p 
+{
+  top: 12rem
+}
+
+.Alunos
+{
+  top: 18rem 
+}
